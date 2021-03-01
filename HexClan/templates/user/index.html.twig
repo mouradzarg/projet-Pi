@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block title %}<title>List users</title>{% endblock title%}
+{% block body %}
+    {% block header %}
+        <!-- ======= Header ======= -->
+        <header id="header" class="d-flex align-items-center ">
+            <div class="container-fluid container-xxl d-flex align-items-center">
+
+                <div id="logo" class="me-auto">
+                    <!-- Uncomment below if you prefer to use a text logo -->
+                    <h1><a href="{{ path('index') }}">RHAPSODY<span>TRAVEL</span></a></h1>
+                    <!-- <a href="index.html" class="scrollto"><img src="{{ asset('img/logo.png') }}" alt="" title=""></a>-->
+                </div>
+                <nav id="navbar" class="navbar order-last order-lg-0">
+                    <ul>
+                        <li><a class="nav-link scrollto active" href="#hero">Liste des utilisateurs</a></li>
+                        <li><a class="nav-link scrollto" href="#">Gérer les logements</a></li>
+                        <li><a class="nav-link scrollto" href="#">Gérer les évenements</a></li>
+                        <li><a class="nav-link scrollto" href="#hotels">Gérer les promos</a></li>
+                        <li><a class="nav-link scrollto" href="#">Gérer les aides</a></li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav><!-- .navbar -->
+                <a class="buy-tickets scrollto" href="#buy-tickets">Déconnexion</a>
+            </div>
+        </header>
+        <!-- End Header -->
+    {% endblock header %}
+{% endblock body %}

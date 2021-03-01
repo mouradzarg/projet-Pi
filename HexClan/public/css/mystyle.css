@@ -1,0 +1,11 @@
+#contact{
+    padding: 10%;
+    background: #323233;
+}
+#contact h2 {
+    color: white;
+
+}
+#contact input {
+    margin: 5px;
+}

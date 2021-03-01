@@ -1,0 +1,54 @@
+{% extends 'user/index.html.twig' %}
+{% block title %}<title>List users</title>{% endblock title%}
+
+{% block body %}
+{{ parent() }}
+
+{% block hero %}
+
+    <section id="about">
+        <section id="speakers">
+            <div class="container" data-aos="fade-up">
+                <div class="section-header">
+                    <h2>La liste des utilisateurs</h2>
+                </div>
+
+                <div class="row justify-content-start">
+                    <div class="col-3">
+                        Nom utilisateur
+                    </div>
+                    <div class="col-3">
+                        Email
+                    </div>
+                    <div class="col-3">
+                        status du compte
+                    </div>
+                    <div class="col-3">
+                        Actions
+                    </div>
+                </div>
+                {% for user in list %}
+                    <div class="row justify-content-start">
+                        <div class="col-3">
+                            {# {{ user }} #}
+                        </div>
+                        <div class="col-3">
+                            Email
+                        </div>
+                        <div class="col-3">
+                            Status
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-success">Valider</button>
+                            <button type="button" class="btn btn-danger">Disactiver</button>
+                        </div>
+                    </div>
+                {%endfor %}
+            </div>
+        </section>
+    </section>
+
+    {% endblock hero %}
+    {% block footer %}
+    {% endblock %}
+{% endblock body %}

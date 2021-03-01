@@ -1,0 +1,57 @@
+{% extends 'base.html.twig '%}
+{% block title %} Inscription {%endblock title%}
+
+{% block body %}
+    {{ parent() }}
+
+    <!-- ======= inscription Section ======= -->
+    <section id="contact" class="section-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="section-header">
+                <h2>Inscription</h2>
+                <p>vous devez activer votre compte avec email</p>
+            </div>
+            <div class="form">
+                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <input type="text" name="nom" class="form-control" id="name" placeholder="nom" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" name="prenom" class="form-control" id="name" placeholder="Prenom" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6 mt-6 mt-md-0">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="adresse Email" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="password" name="password" class="form-control" id="name" placeholder="mot de passe" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6 mt-6 mt-md-0">
+                            <input type="date" class="form-control" name="date" id="email" placeholder="Date de Naissance" required>
+                        </div>
+
+                        <div class=" form-group col-md-6">
+                            <input type="text" name="cin" class="form-control" id="name" placeholder="cin" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6 mt-6 mt-md-0">
+                        <input type="text" name="tel" class="form-control" id="name" placeholder="telephone" required>
+                    </div>
+                    </div>
+                    <div class="my-6">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Vérifier votre mail pour la confirmation du compte</div>
+                    </div>
+                    <div class="text-center"><button type="submit">Créer un compte</button></div>
+                </form>
+            </div>
+
+        </div>
+    </section><!-- End Contact Section -->
+{% endblock body %}
