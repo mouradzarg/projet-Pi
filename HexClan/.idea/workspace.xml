@@ -20,17 +20,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8d8b0c6-9f5f-40d0-a3c4-beaa7460e76f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/mystyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/inscription.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/list.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/login.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/userInfo.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210302124954.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210303203211.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210303203349.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210303213052.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210303213057.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210303220910.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/EvenementController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/WishlistController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Evenement.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Wishlist.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/LoginFormType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/EvenementRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/WishlistRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/evenement/evenement.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/evenement/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/wishlist.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/wishlist/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/mystyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/mystyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/inscription.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/inscription.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/userInfo.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/userInfo.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,6 +192,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\21650\Documents\GitHub\projet-Pi\HexClan\templates\evenement" />
       <recent name="C:\Users\21650\Documents\GitHub\projet-Pi\HexClan\public" />
     </key>
   </component>
@@ -187,7 +208,11 @@
       <workItem from="1614463692293" duration="3362000" />
       <workItem from="1614528537305" duration="7025000" />
       <workItem from="1614610718051" duration="9952000" />
-      <workItem from="1614625111861" duration="7648000" />
+      <workItem from="1614625111861" duration="11745000" />
+      <workItem from="1614686185810" duration="10607000" />
+      <workItem from="1614711928368" duration="2861000" />
+      <workItem from="1614719750050" duration="6294000" />
+      <workItem from="1614774083238" duration="28677000" />
     </task>
     <servers />
   </component>
@@ -210,18 +235,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614619937227">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614804291527">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1614619937227" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1614804291527" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614619433344">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1614619433344" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614627959937">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614636945022">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1614627959937" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1614636945022" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614534841238">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

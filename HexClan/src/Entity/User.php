@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -18,18 +19,22 @@ class User
      */
     private $id;
 
+
     /**
      * @ORM\Column(type="string", length=40)
+     * @Assert\NotBlank(message="le nom est obligatoir")
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=40)
+     * @Assert\NotBlank(message="le prenom est obligatoir")
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message="le email est obligatoir")
      */
     private $email;
 
@@ -62,6 +67,7 @@ class User
      * @ORM\Column(type="date")
      */
     private $dateNaiss;
+
 
     public function getId(): ?int
     {
@@ -174,5 +180,6 @@ class User
         $this->dateNaiss = $dateNaiss;
 
         return $this;
-    }
-}
+    }}
+
+

@@ -5,48 +5,51 @@
 {{ parent() }}
 
 {% block hero %}
-
-    <section id="about">
+<section id="about"></section>
         <section id="speakers">
-            <div class="container" data-aos="fade-up">
+            <table class="container table" data-aos="fade-up">
                 <div class="section-header">
                     <h2>La liste des utilisateurs</h2>
                 </div>
-
-                <div class="row justify-content-start">
-                    <div class="col-3">
+            <thead>
+                <tr class="row justify-content-start">
+                    <th class="col-3">
                         Nom utilisateur
-                    </div>
-                    <div class="col-3">
+                    </th>
+                    <th class="col-3">
                         Email
-                    </div>
-                    <div class="col-3">
+                    </th>
+                    <th class="col-3">
                         status du compte
-                    </div>
-                    <div class="col-3">
-                        Actions
-                    </div>
-                </div>
+                    </th>
+
+                    <th class="col-3">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+                <tbody>
                 {% for user in list %}
-                    <div class="row justify-content-start">
-                        <div class="col-3">
-                            {# {{ user }} #}
-                        </div>
-                        <div class="col-3">
-                            Email
-                        </div>
-                        <div class="col-3">
-                            Status
-                        </div>
-                        <div class="col-3">
-                            <button type="button" class="btn btn-success">Valider</button>
-                            <button type="button" class="btn btn-danger">Disactiver</button>
-                        </div>
-                    </div>
+                    <tr class="row justify-content-start">
+                        <td class="col-3">
+                             {{ user.prenom }}
+                        </td>
+                        <td class="col-3">
+                            {{ user.email }}
+                        </td>
+                        <td class="col-3">
+                           {% set action=1 %} {% if user.status ==1 %}{% set action=0 %}activé{% else %}Désactivé{% endif %}
+                        </td>
+                        <td class="col-3">
+                            <a href="{{ path('changeStatus',{'id':user.id,'action':action}) }}"> <button  type="button" {% if action==0 %}class="btn btn-danger" {%else %}class="btn btn-success"{% endif %}>{% if user.status ==1 %}Désactiver{% else %}Activer{% endif %}</button></a>
+
+                        </td>
+                    </tr>
                 {%endfor %}
-            </div>
+                </tbody>
+
+            </table>
         </section>
-    </section>
 
     {% endblock hero %}
     {% block footer %}

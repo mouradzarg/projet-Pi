@@ -1,10 +1,12 @@
 {% extends 'base.html.twig '%}
-{% block title %} Inscription {%endblock title%}
+{% block title %} <title>Inscription</title> {%endblock%}
 
 {% block body %}
     {{ parent() }}
 
-    <!-- ======= inscription Section ======= -->
+    <!-- ======= inscription Section =======-->
+<section id="subscribe"></section>
+    {{ form_start(form)}}
     <section id="contact" class="section-bg">
         <div class="container" data-aos="fade-up">
             <div class="section-header">
@@ -12,46 +14,79 @@
                 <p>vous devez activer votre compte avec email</p>
             </div>
             <div class="form">
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <form action="{{ path('inscrit') }}" method="post" role="form" class="php-email-form">
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <input type="text" name="nom" class="form-control" id="name" placeholder="nom" required>
+                           <div class="form-control">
+                               {{ form_errors(form.nom) }}
+                               {{ form_label(form.nom,"nom") }}
+                               {{ form_widget(form.nom) }}
+                           </div>
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="text" name="prenom" class="form-control" id="name" placeholder="Prenom" required>
+                            <div class="form-control">
+                                {{ form_label(form.prenom,"Prenom") }}
+                                {{ form_widget(form.prenom) }}
+                            </div>
+                            <!-- <input type="text" name="prenom" class="form-control" id="name" placeholder="Prenom" required>-->
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6 mt-6 mt-md-0">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="adresse Email" required>
+                            <div class="form-control">
+
+                                {{ form_errors(form.nom) }}
+                                {{ form_label(form.email,"Email") }}
+                                {{ form_widget(form.email) }}
+                            </div>
+                            <!--<input type="email" class="form-control" name="email" id="email" placeholder="adresse Email" required>-->
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="password" name="password" class="form-control" id="name" placeholder="mot de passe" required>
+                            <div class="form-control">
+                                {{ form_label(form.password,"Mot de passe") }}
+                                {{ form_widget(form.password) }}
+                            </div>
+                            <!--<input type="password" name="password" class="form-control" id="name" placeholder="mot de passe" required>-->
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6 mt-6 mt-md-0">
-                            <input type="date" class="form-control" name="date" id="email" placeholder="Date de Naissance" required>
+                            <div class="form-control">
+                                {{ form_label(form.dateNaiss,"Date de naissance") }}
+                                {{ form_widget(form.dateNaiss) }}
+                            </div>
+                            <!--<input type="date" class="form-control" name="date" id="email" placeholder="Date de Naissance" required>-->
                         </div>
 
                         <div class=" form-group col-md-6">
-                            <input type="text" name="cin" class="form-control" id="name" placeholder="cin" required>
+                            <div class="form-control">
+                                {{ form_label(form.cin,"numero de cin") }}
+                                {{ form_widget(form.cin) }}
+                            </div>
+                            <!--<input type="text" name="cin" class="form-control" id="name" placeholder="cin" required>-->
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6 mt-6 mt-md-0">
-                        <input type="text" name="tel" class="form-control" id="name" placeholder="telephone" required>
+                            <div class="form-control">
+                                {{ form_label(form.numTel,"Numero de télephone") }}
+                                {{ form_widget(form.numTel) }}
+                            </div>
+                        <!--<input type="text" name="tel" class="form-control" id="name" placeholder="telephone" required>-->
                     </div>
                     </div>
                     <div class="my-6">
-                        <div class="loading">Loading</div>
+                       <!-- <div class="loading">Loading</div>
                         <div class="error-message"></div>
-                        <div class="sent-message">Vérifier votre mail pour la confirmation du compte</div>
+                        <div class="sent-message">Vérifier votre mail pour la confirmation du compte</div>-->
                     </div>
-                    <div class="text-center"><button type="submit">Créer un compte</button></div>
-                </form>
+                    <div class="form-control text-center">
+                        {{ form_widget(form.Inscription) }}</div>
+                   <!-- <div class="text-center"><button type="submit">Créer un compte</button></div>-->
+               {{ form_end(form) }}
             </div>
 
         </div>
     </section><!-- End Contact Section -->
+
 {% endblock body %}

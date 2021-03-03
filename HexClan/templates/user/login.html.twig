@@ -1,33 +1,39 @@
 {% extends 'base.html.twig' %}
 {% block title  %}<title>Login page</title>{% endblock %}
+
 {% block body %}
 {{ parent() }}
 
-
+<section id="subscribe"></section>
     <section id="contact" class="section-bg">
+        {{ form_start(form) }}
         <div class="container" data-aos="fade-up">
             <div class="section-header">
                 <h2>Authentification</h2>
                 <p>Bienvenue à nouveau</p>
             </div>
             <div class="form">
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <form action="" method="post" role="form" class="php-email-form">
                     <div class="row justify-content-md-center">
                         <div class="form-group col-md-4 mt-4 mt-md-0">
-                            <input type="email" name="email" class="form-control" id="email" placeholder="email" required>
+                            {{ form_label(form.email,"Adresse email") }}
+                            {{ form_widget(form.email) }}
+                           <!-- <input type="email" name="email" class="form-control" id="email" placeholder="email" required>-->
                         </div>
                     </div>
                         <div class="row justify-content-md-center ">
                         <div class="form-group col-md-4 mt-4 mt-md-0">
-                            <input type="password" name="pass" class="form-control" id="pass" placeholder="mot de passe" required>
+                            {{ form_label(form.password,"Mot de passe") }}
+                            {{ form_widget(form.password) }}
+                            <!--<input type="password" name="pass" class="form-control" id="pass" placeholder="mot de passe" required>-->
                         </div>
                     </div>
-                    <div class="row ">
-                        <div class="loading">chargement</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">vérifier l'email ou le mot de passe</div>
-                    </div>
-                    <div class="text-center"><button type="submit">Connexion</button></div>
+                    <div class=" text-center">
+                        {{ form_widget(form.Connexion) }}</div>
+                    <!--<div class="text-center"><a href="{# path('connexion',{'email':'','password':''})#}  "> <button type="submit">Connexion</button></a></div>-->
+                    <div class="text-center"><a href="{{ path('inscrit') }}">vous n'avez pas un compte ?</a> </div>
+                    {{ form_end(form) }}
+
                 </form>
             </div>
         </div>

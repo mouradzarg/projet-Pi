@@ -13,15 +13,21 @@
                 </div>
                 <nav id="navbar" class="navbar order-last order-lg-0">
                     <ul>
-                        <li><a class="nav-link scrollto active" href="#hero">Liste des utilisateurs</a></li>
-                        <li><a class="nav-link scrollto" href="#">Gérer les logements</a></li>
-                        <li><a class="nav-link scrollto" href="#">Gérer les évenements</a></li>
-                        <li><a class="nav-link scrollto" href="#hotels">Gérer les promos</a></li>
-                        <li><a class="nav-link scrollto" href="#">Gérer les aides</a></li>
+                        {% if type=='user' %}
+
+                        <li><a class="nav-link scrollto" href="{{ path('wishlistevent') }}">Mon wishlist</a></li>
+                            li><a class="nav-link scrollto" href="{{ path('listEvent') }}">Les evenements</a></li>
+
+                        {% else %}
+
+                            <li><a class="nav-link scrollto active" href="{{ path('listUser') }}">Liste des utilisateurs</a></li>
+
+                        {% endif %}
+                        <li><a class="nav-link scrollto" href="{{ path('updateUser') }}">Modifier mon compte</a></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
-                <a class="buy-tickets scrollto" href="#buy-tickets">Déconnexion</a>
+                <a class="buy-tickets scrollto" href="{{ path('diconnect') }}">Déconnexion</a>
             </div>
         </header>
         <!-- End Header -->
