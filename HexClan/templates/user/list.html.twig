@@ -1,23 +1,36 @@
-{% extends 'user/index.html.twig' %}
+{% extends 'adminBase.html.twig' %}
 {% block title %}<title>List users</title>{% endblock title%}
 
-{% block body %}
-{{ parent() }}
 
+{% block active %}  La Liste des utilisateurs{% endblock active %}
+{% block titrepage %}Liste des utilisateurs{% endblock %}
 {% block hero %}
 <section id="about"></section>
         <section id="speakers">
-            <table class="container table" data-aos="fade-up">
-                <div class="section-header">
-                    <h2>La liste des utilisateurs</h2>
-                </div>
+
+            <table class="container table" data-aos="fade-up" id="t">
+
+
             <thead>
+            <tr class="row justify-content-start">
+                <td class="col-3">
+                    <input type="text" id="search" class="form-control" placeholder="Search"></td></tr>
+
+            <tr class="row justify-content-start">
+                <td class="col-3">
+                <select class="form-control" id="filtre">
+                    <option id=""></option>
+                    <option value="1" id="active">Active</option>
+                    <option value="0" id="desactive">Desactive</option>.
+                </select>
+                </td>
+            </tr>
                 <tr class="row justify-content-start">
                     <th class="col-3">
                         Nom utilisateur
                     </th>
                     <th class="col-3">
-                        Email
+                        cin
                     </th>
                     <th class="col-3">
                         status du compte
@@ -28,14 +41,16 @@
                     </th>
                 </tr>
             </thead>
-                <tbody>
+
+                <tbody id="all">
+
                 {% for user in list %}
                     <tr class="row justify-content-start">
                         <td class="col-3">
                              {{ user.prenom }}
                         </td>
                         <td class="col-3">
-                            {{ user.email }}
+                            {{ user.cin }}
                         </td>
                         <td class="col-3">
                            {% set action=1 %} {% if user.status ==1 %}{% set action=0 %}activé{% else %}Désactivé{% endif %}
@@ -46,12 +61,125 @@
                         </td>
                     </tr>
                 {%endfor %}
+                <td class="row justify-content-start">
+                    {{ knp_pagination_render(
+                        list,
+                        '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig',
+                        {
+                            'queryParam1': 'param1 value',
+                            'queryParam2': 'param2 value'
+                        },
+                        {
+                            'viewParam1': 'param1 value',
+                            'viewParam2': 'param2 value'
+                        },
+                    ) }}
+                </td>
+                </tbody>
+                <tbody id="search">
+
                 </tbody>
 
+
             </table>
+
         </section>
 
     {% endblock hero %}
+
     {% block footer %}
+        <script src="{{ asset('js/jquery.min.js') }}">
+        </script>
+        <script>
+            $( document ).ready(function() {
+                $("#search").keyup(function(e){
+                    /* La variable value va prendre la valeur insérer dans le champ de texte afin d’effectuer la recherche */
+                    var value = $(this).val();
+                    /* Ajax est lancé lors du remplissage du champ texte dont l’id est « search » pour faire la recherche */
+                    $.ajax({
+                        /* l’url est une chaine de caractères contenant l’adresse où la requête est envoyée */
+                        url : "{{ path('searchusers') }}",
+                        /* La méthode utilisée pour transférer les données est GET */
+                        type : 'GET',
+                        /*Ici search value va prendre la chaine entrée par un utilisateur dans la zone de recherche et sera placée après l’url */
+                        data: {
+                            'searchValue' : value
+                        },
+                        /*Cette fonction permet de vider le contenu du tableau pour recevoir le nouveau contenu*/
+                        success : function(retour){
+                            if(retour){
+                                $('#t tbody#search').empty();
+                                var result=JSON.parse(retour);
+                                $.each(result, function(i, obj) {
+                                    $('#t tbody#all').hide();
+                                    var statu="Désactivé";
+                                    var Action="Activer";
+                                    var btn='<button  type="button" class="btn btn-success">';
+                                    if(obj.status){
+                                            statu="Activé";
+                                            Action="Désactiver";
+                                        btn='<button  type="button" class="btn btn-danger">';
+                                    }
+                                    $('#t tbody#search').append('<tr class="row justify-content-start"><td class="col-3"> '+obj.prenom+'  </td><td class="col-3">    '+obj.cin+'  </td><td class="col-3">'+ statu+'</td><td class="col-3">'+' <a href="">'+btn+''+Action+'</button></a> </td>');
+                                });
+                            }
+                            else
+                            {
+                                $('#t tbody#all').show();
+                                $('#t tbody#search').empty();
+                                $('#t tbody#search').fadeIn('fast');
+                            }
+                        },
+                    });
+                    return false;
+                });
+            });
+
+
+
+        </script>
+
+        <script>
+            $( document ).ready(function() {
+                $("#filtre").change(function(e){
+                    var value = $(this).val();
+                    /* Ajax est lancé lors du remplissage du champ texte dont l’id est « search » pour faire la recherche */
+                    $.ajax({
+                        /* l’url est une chaine de caractères contenant l’adresse où la requête est envoyée */
+                        url : "{{ path('active',{'crit':'val'}) }}".replace("val",value),
+
+                        /* La méthode utilisée pour transférer les données est GET */
+                        type : 'GET',
+                        /*Ici search value va prendre la chaine entrée par un utilisateur dans la zone de recherche et sera placée après l’url */
+
+                        /*Cette fonction permet de vider le contenu du tableau pour recevoir le nouveau contenu*/
+                        success : function(retour){
+                            if(retour){
+                                $('#t tbody#search').empty();
+                                var result=JSON.parse(retour);
+                                $.each(result, function(i, obj) {
+                                    $('#t tbody#all').hide();
+                                    var statu="Désactivé";
+                                    var Action="Activer";
+                                    var btn='<button  type="button" class="btn btn-success">';
+                                    if(obj.status){
+                                        statu="Activé";
+                                        Action="Désactiver";
+                                        btn='<button  type="button" class="btn btn-danger">';
+                                    }
+                                    $('#t tbody#search').append('<tr class="row justify-content-start"><td class="col-3"> '+obj.prenom+'  </td><td class="col-3">    '+obj.cin+'  </td><td class="col-3">'+ statu+'</td><td class="col-3">'+' <a href="">'+btn+''+Action+'</button></a> </td>');
+                                });
+                            }
+                            else
+                            {
+                                $('#t tbody#all').show();
+                                $('#t tbody#search').empty();
+                                $('#t tbody#search').fadeIn('fast');
+                            }
+                        },
+                    });
+                    return false;
+                });
+            });
+        </script>
     {% endblock %}
-{% endblock body %}

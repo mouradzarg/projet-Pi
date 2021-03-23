@@ -4,18 +4,22 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="`user`")
  */
+
 class User
 {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("users")
      */
     private $id;
 
@@ -23,48 +27,57 @@ class User
     /**
      * @ORM\Column(type="string", length=40)
      * @Assert\NotBlank(message="le nom est obligatoir")
+     * @Groups("users")
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=40)
      * @Assert\NotBlank(message="le prenom est obligatoir")
+     * @Groups("users")
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=100)
-     * @Assert\NotBlank(message="le email est obligatoir")
+     * @Assert\Email(message="le email non valide")
+     * @Groups("users")
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=20)
+     * @Groups("users")
      */
     private $numTel;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("users")
      */
     private $password;
 
     /**
      * @ORM\Column(type="string", length=8)
+     * @Groups("users")
      */
     private $cin;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups("users")
      */
     private $status;
 
     /**
      * @ORM\Column(type="string", length=20)
+     * @Groups("users")
      */
     private $compteType;
 
     /**
      * @ORM\Column(type="date")
+     * @Groups("users")
      */
     private $dateNaiss;
 
@@ -181,5 +194,6 @@ class User
 
         return $this;
     }}
+
 
 

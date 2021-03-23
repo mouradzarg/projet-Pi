@@ -44,7 +44,7 @@ class UserRepository extends ServiceEntityRepository
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()
-        ;
+            ;
     }
 
     public function findAllusers() :array
@@ -56,5 +56,39 @@ class UserRepository extends ServiceEntityRepository
             ->execute();
 
     }
+
+    public function findUserActive($crit) :array
+    {
+        return $this->createQueryBuilder('u')
+            ->where('u.status = :crit')
+            ->setParameter('crit',$crit)
+            ->getQuery()
+            ->execute();
+    }
+
+
+
+    public function findUserBycin($cin){
+        return $this->createQueryBuilder('u')
+            ->where('u.cin LIKE :cin')
+            ->setParameter('cin', '%'.$cin.'%')
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findUser($email,$pass) :array
+    {
+        return $this->createQueryBuilder('u')
+            ->where('u.email = :mail')
+            ->andWhere('u.password = :pass')
+            ->setParameter('mail',$email)
+            ->setParameter('pass',$pass)
+            ->getQuery()
+            ->execute();
+    }
+
+
+
+
 
 }

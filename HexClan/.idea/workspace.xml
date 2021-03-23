@@ -20,37 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8d8b0c6-9f5f-40d0-a3c4-beaa7460e76f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210302124954.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210303203211.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210303203349.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210303213052.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210303213057.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210303220910.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/EvenementController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/WishlistController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Evenement.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Wishlist.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/LoginFormType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/EvenementRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/WishlistRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/evenement/evenement.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/evenement/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/user/wishlist.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/wishlist/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/paginator.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/sb-admin-2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/test.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user/dashboard.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/HexClan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HexClan.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/mystyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/mystyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/LoginFormType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/LoginFormType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/inscription.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/inscription.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/list.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/userInfo.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/userInfo.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,6 +161,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/inflector" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/vendor/symfony/web-server-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1p50FfuenX4qQq7RjhHQsfTkpIS" />
@@ -186,12 +177,13 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/newProject (1)/newProject" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\21650\Documents\GitHub\projet-Pi\HexClan\public\css" />
       <recent name="C:\Users\21650\Documents\GitHub\projet-Pi\HexClan\templates\evenement" />
       <recent name="C:\Users\21650\Documents\GitHub\projet-Pi\HexClan\public" />
     </key>
@@ -212,7 +204,22 @@
       <workItem from="1614686185810" duration="10607000" />
       <workItem from="1614711928368" duration="2861000" />
       <workItem from="1614719750050" duration="6294000" />
-      <workItem from="1614774083238" duration="28677000" />
+      <workItem from="1614774083238" duration="29651000" />
+      <workItem from="1614845878544" duration="5217000" />
+      <workItem from="1614961293014" duration="1833000" />
+      <workItem from="1615303510967" duration="655000" />
+      <workItem from="1615310658569" duration="595000" />
+      <workItem from="1615320326475" duration="7684000" />
+      <workItem from="1615336411227" duration="3353000" />
+      <workItem from="1615385074254" duration="8185000" />
+      <workItem from="1615395982417" duration="15494000" />
+      <workItem from="1615452554957" duration="4553000" />
+      <workItem from="1615648973883" duration="63000" />
+      <workItem from="1615655331818" duration="2437000" />
+      <workItem from="1616197997407" duration="68000" />
+      <workItem from="1616444581604" duration="218000" />
+      <workItem from="1616449673483" duration="8406000" />
+      <workItem from="1616507754108" duration="6635000" />
     </task>
     <servers />
   </component>
@@ -235,18 +242,24 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614804291527">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="552" y="218" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614847363035">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1614804291527" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614619433344">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="552" y="218" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1614847363035" />
+    <state x="-1328" y="220" key="FileChooserDialogImpl" timestamp="1616521635884">
+      <screen x="-1920" y="0" width="1536" height="832" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1614619433344" />
+    <state x="-1328" y="220" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@-1920.0.1536.832" timestamp="1616521635883" />
+    <state x="740" y="275" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1616507841381" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614636945022">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1614636945022" />
+    <state x="355" y="128" width="1540" height="823" maximized="true" key="dock-window-1" timestamp="1615392781016">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="355" y="128" width="1540" height="823" maximized="true" key="dock-window-1/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1615392781016" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614534841238">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

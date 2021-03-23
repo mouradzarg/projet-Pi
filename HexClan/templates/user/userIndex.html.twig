@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %}<title>Modifier compte</title>{% endblock title%}
+{% block body %}
+    {{ parent() }}
+     {% block header %}
+        <!-- ======= Header ======= -->
+        <header id="header" class="d-flex align-items-center ">
+            <div class="container-fluid container-xxl d-flex align-items-center">
+
+                <div id="logo" class="me-auto">
+                    <!-- Uncomment below if you prefer to use a text logo -->
+                    <h1><a href="{{ path('index') }}">RHAPSODY<span>TRAVEL</span></a></h1>
+                    <!-- <a href="index.html" class="scrollto"><img src="{{ asset('img/logo.png') }}" alt="" title=""></a>-->
+                </div>
+                <nav id="navbar" class="navbar order-last order-lg-0">
+                    <ul>
+                            <li><a class="nav-link scrollto" href="{# {{ path('wishlistevent') }}  #}">Mon wishlist</a></li>
+                            <li><a class="nav-link scrollto" href="{#{{ path('listEvent') }}#}">Les evenements</a></li>
+                        <li><a class="nav-link scrollto" href="{{ path('updateUser') }}">Modifier mon compte</a></li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav><!-- .navbar -->
+                <a class="buy-tickets scrollto" href="{{ path('diconnect') }}">Déconnexion</a>
+            </div>
+        </header>
+        <!-- End Header -->
+    {% endblock header %}
+{% endblock body %}

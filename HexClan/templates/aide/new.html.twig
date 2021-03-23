@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Aide{% endblock %}
+
+{% block body %}
+    <h1>Create new Aide</h1>
+
+    {{ include('aide/_form.html.twig') }}
+
+    <a href="{{ path('aide_index') }}">back to list</a>
+{% endblock %}

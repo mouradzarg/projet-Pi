@@ -1,9 +1,16 @@
-{% extends 'user/index.html.twig' %}
+
+{% if type=='user' %}
+    {%  set x='user/userIndex.html.twig' %}
+{% else %}
+    {%  set x='adminBase.html.twig' %}
+
+{% endif %}
+{% extends x %}
 {% block title %}<title>User name</title>{% endblock title %}
 
 {% block body %}
     {{ parent() }}
-
+{% block hero%}
     <section id="subscribe"></section>
     {{ form_start(form)}}
     <section id="contact" class="section-bg">
@@ -84,4 +91,5 @@
 
         </div>
     </section><!-- End Contact Section -->
+    {% endblock hero %}
 {% endblock body %}

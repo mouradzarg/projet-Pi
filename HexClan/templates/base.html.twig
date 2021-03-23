@@ -1,145 +1,158 @@
 
 {% block head %}
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-   {% block title%} <title>Home</title>{% endblock title %}
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+        {% block title%} <title>Home</title>{% endblock title %}
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+    {% block css %}
+        <!-- Favicons -->
+        <link href="{{ asset('img/favicon.png')}}" rel="icon">
+        <link href="{{ asset('img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
-    <!-- Favicons -->
-    <link href="{{ asset('img/favicon.png')}}" rel="icon">
-    <link href="{{ asset('img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+        <link
+                href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+                rel="stylesheet">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
-    <!-- Vendor CSS Files -->
-    <link href="{{ asset('/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-    <link href="{{ asset('/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
-    <!-- Template Main CSS File -->
-    <link href="{{asset('css/style.css')}}" rel="stylesheet">
-    <link href="{{asset('css/mystyle.css')}}" rel="stylesheet">
+        <!-- Vendor CSS Files -->
+        <link href="{{ asset('/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{ asset('/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+        <link href="{{ asset('/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
 
-    <!-- =======================================================
-    * Template Name: TheEvent - v4.0.1
-    * Template URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
-</head>
+        <!-- Custom styles for this template-->
+        <link href="{{ asset('/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+        <!-- Template Main CSS File -->
+        <link href="{{asset('css/style.css')}}" rel="stylesheet">
+        <link href="{{ asset('css/sb-admin-2.min.css')}}css/" rel="stylesheet">
+        <link href="{{asset('css/mystyle.css')}}" rel="stylesheet">
+
+        <!-- =======================================================
+        * Template Name: TheEvent - v4.0.1
+        * Template URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
+        * Author: BootstrapMade.com
+        * License: https://bootstrapmade.com/license/
+        ======================================================== -->
+        {% endblock css %}
+    </head>
 {% endblock head %}
 {% block body %}
 
-{% block header %}
-<!-- ======= Header ======= -->
-<header id="header" class="d-flex align-items-center ">
-    <div class="container-fluid container-xxl d-flex align-items-center">
 
-        <div id="logo" class="me-auto">
-            <!-- Uncomment below if you prefer to use a text logo -->
-            <h1><a href="{{ path('index') }}">RHAPSODY<span>TRAVEL</span></a></h1>
-           <!-- <a href="index.html" class="scrollto"><img src="{{ asset('img/logo.png') }}" alt="" title=""></a>-->
-        </div>
 
-        <nav id="navbar" class="navbar order-last order-lg-0">
-            <ul>
-                <li><a class="nav-link scrollto active" href="{{ path('index') }}">Accueil</a></li>
-                <li><a class="nav-link scrollto" href="#">à propos</a></li>
-                <li><a class="nav-link scrollto" href="#">Evenement</a></li>
-                <li><a class="nav-link scrollto" href="#hotels">Hôtels</a></li>
-                <li><a class="nav-link scrollto" href="#">Promo</a></li>
-                <li><a class="nav-link scrollto" href="#contact">Aide</a></li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
-        <a class="buy-tickets scrollto" href="{{ path('login') }}">connexion</a>
+    {% block header %}
+        <!-- ======= Header ======= -->
+        <header id="header" class="d-flex align-items-center ">
+            <div class="container-fluid container-xxl d-flex align-items-center">
 
-    </div>
-</header><!-- End Header -->
-{% endblock header %}
+                <div id="logo" class="me-auto">
+                    <!-- Uncomment below if you prefer to use a text logo -->
+                    <h1><a href="{{ path('index') }}">RHAPSODY<span>TRAVEL</span></a></h1>
+                    <!-- <a href="index.html" class="scrollto"><img src="{{ asset('img/logo.png') }}" alt="" title=""></a>-->
+                </div>
 
+                <nav id="navbar" class="navbar order-last order-lg-0">
+                    <ul>
+                        <li><a class="nav-link scrollto active" href="{{ path('index') }}">Accueil</a></li>
+                        <li><a class="nav-link scrollto" href="#">à propos</a></li>
+                        <li><a class="nav-link scrollto" href="#">Evenement</a></li>
+                        <li><a class="nav-link scrollto" href="#">Hôtels</a></li>
+                        <li><a class="nav-link scrollto" href="#">Promo</a></li>
+                        <li><a class="nav-link scrollto" href="#">Aide</a></li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                </nav><!-- .navbar -->
+                <a class="buy-tickets scrollto" href="  {{ path('login') }}">connexion</a>
+
+            </div>
+        </header><!-- End Header -->
+    {% endblock header %}
 {% endblock body %}
-{% block footer %}
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
 
-                    <div class="col-lg-3 col-md-6 footer-info">
-                        <img src="{{ asset('/img/logo.png') }}" alt="TheEvenet">
-                        <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate cupiditate debitis accusamus repellat cumque.</p>
-                    </div>
+    {% block footer %}
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
 
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Accueil</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">A propos</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-                        </ul>
-                    </div>
+                        <div class="col-lg-3 col-md-6 footer-info">
+                            <img src="{{ asset('/img/logo.png') }}" alt="TheEvenet">
+                            <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro. Perspiciatis ad omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate cupiditate debitis accusamus repellat cumque.</p>
+                        </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Evenement</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Logement</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#">Aide</a></li>
-                        </ul>
-                    </div>
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><i class="bi bi-chevron-right"></i> <a href="#">Accueil</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="#">A propos</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+                            </ul>
+                        </div>
 
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h4>Contactez nous</h4>
-                        <p>
-                            9, Impasse n°3, Rue Azouz <br>
-                            Rebai,2092, El Manar 2,<br>
-                            Tunis, Tunis 2092 <br>
-                            <strong>Télephone:</strong> +216 70259337<br>
-                            <strong>Email:</strong> hexclan2k@gmail.com<br>
-                        </p>
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><i class="bi bi-chevron-right"></i> <a href="#">Evenement</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="#">Logement</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="#">Aide</a></li>
+                            </ul>
+                        </div>
 
-                        <div class="social-links">
-                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="google-plus"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        <div class="col-lg-3 col-md-6 footer-contact">
+                            <h4>Contactez nous</h4>
+                            <p>
+                                9, Impasse n°3, Rue Azouz <br>
+                                Rebai,2092, El Manar 2,<br>
+                                Tunis, Tunis 2092 <br>
+                                <strong>Télephone:</strong> +216 70259337<br>
+                                <strong>Email:</strong> hexclan2k@gmail.com<br>
+                            </p>
+
+                            <div class="social-links">
+                                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" class="google-plus"><i class="bi bi-instagram"></i></a>
+                                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                            </div>
+
                         </div>
 
                     </div>
-
                 </div>
             </div>
-        </div>
 
-        <div class="container">
-            <div class="copyright">
-                &copy; Copyright <strong>RHAPSODY TRAVEL</strong>. All Rights Reserved
+            <div class="container">
+                <div class="copyright">
+                    &copy; Copyright <strong>RHAPSODY TRAVEL</strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                    <!--
+                    All the links in the footer should remain intact.
+                    You can delete the links only if you purchased the pro version.
+                    Licensing information: https://bootstrapmade.com/license/
+                    Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
+                  -->
+                    Designed by <a href="https://bootstrapmade.com/">HEXCLAN</a>
+                </div>
             </div>
-            <div class="credits">
-                <!--
-                All the links in the footer should remain intact.
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
-              -->
-                Designed by <a href="https://bootstrapmade.com/">HEXCLAN</a>
-            </div>
-        </div>
-    </footer><!-- End  Footer -->
-{% endblock %}
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-{% block script %}
-    <!-- Vendor JS Files -->
-    <script src="{{ asset('vendor/aos/aos.js')}}"></script>
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{ asset('vendor/glightbox/js/glightbox.min.js')}}"></script>
-    <script src="{{ asset('vendor/php-email-form/validate.js')}}"></script>
+        </footer><!-- End  Footer -->
+    {% endblock footer %}
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    {% block js %}
+        <!-- Vendor JS Files -->
+        <script src="{{ asset('vendor/aos/aos.js')}}"></script>
+        <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{ asset('vendor/glightbox/js/glightbox.min.js')}}"></script>
+        <script src="{{ asset('vendor/php-email-form/validate.js')}}"></script>
 
-    <!-- Template Main JS File -->
-    <script src="{{ asset('js/main.js') }}"></script>
-{% endblock script %}
+        <!-- Template Main JS File -->
+        <script src="{{ asset('js/main.js') }}"></script>
+    {% endblock %}
+
+
+

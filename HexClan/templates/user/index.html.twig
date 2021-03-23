@@ -1,35 +1,17 @@
+
 {% extends 'base.html.twig' %}
-{% block title %}<title>List users</title>{% endblock title%}
-{% block body %}
-    {% block header %}
-        <!-- ======= Header ======= -->
-        <header id="header" class="d-flex align-items-center ">
-            <div class="container-fluid container-xxl d-flex align-items-center">
 
-                <div id="logo" class="me-auto">
-                    <!-- Uncomment below if you prefer to use a text logo -->
-                    <h1><a href="{{ path('index') }}">RHAPSODY<span>TRAVEL</span></a></h1>
-                    <!-- <a href="index.html" class="scrollto"><img src="{{ asset('img/logo.png') }}" alt="" title=""></a>-->
-                </div>
-                <nav id="navbar" class="navbar order-last order-lg-0">
-                    <ul>
-                        {% if type=='user' %}
+{% block title %}<title>home page</title>{% endblock %}
+{% block body%}
+    {{parent() }}
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+        <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+            <h1 class="mb-4 pb-0">Bienvenue chez<br><span>rhapsody </span>travel</h1>
+            <p class="mb-4 pb-0">La plus grande récompense, le voyage de luxe</p>
+            <a href="https://youtu.be/FDYF6R0zed0" class="glightbox play-btn mb-4"></a>
+            <a href=" {{ path('inscrit')}} " class="about-btn scrollto">Créer un compte</a>
+        </div>
+    </section><!-- End Hero Section -->
 
-                        <li><a class="nav-link scrollto" href="{{ path('wishlistevent') }}">Mon wishlist</a></li>
-                            li><a class="nav-link scrollto" href="{{ path('listEvent') }}">Les evenements</a></li>
-
-                        {% else %}
-
-                            <li><a class="nav-link scrollto active" href="{{ path('listUser') }}">Liste des utilisateurs</a></li>
-
-                        {% endif %}
-                        <li><a class="nav-link scrollto" href="{{ path('updateUser') }}">Modifier mon compte</a></li>
-                    </ul>
-                    <i class="bi bi-list mobile-nav-toggle"></i>
-                </nav><!-- .navbar -->
-                <a class="buy-tickets scrollto" href="{{ path('diconnect') }}">Déconnexion</a>
-            </div>
-        </header>
-        <!-- End Header -->
-    {% endblock header %}
-{% endblock body %}
+{% endblock %}
