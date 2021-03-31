@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block title 'Editer' %}
+{% block body %}
+
+    <div class="container mt-5">
+        <h1>Ajouter Un Nouveau Evénement : </h1>
+        {{ include('client/_formclient.html.twig', {button: 'Ajouter'}) }}
+    </div>
+
+{% endblock %}

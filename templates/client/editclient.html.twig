@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block title 'Editer' %}
+{% block body %}
+
+    <div class="container mt-4">
+        <h1>Editer L'Article : </h1>
+        {{ include('client/_formclient.html.twig', {button: 'Modifier'}) }}
+    </div>
+
+{% endblock %}

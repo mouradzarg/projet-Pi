@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block title 'Rhapsody Travel' %}
+{% block body %}
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>RHAPSODY TRAVEL</h1>
+            <i>Bienvenue à Rhapsody Travel.</i>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Les Dérniers Événements : </h2>
+    <div class="jumbotron text-center">
+
+    <div class="row flex">
+            {% for event in events %}
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a style="color:hsl(0,100%,50%);" href="{{ path('event.show', {id: event.id, slug: event.slug}) }}">{{ event.titre }}</a style="color:hsl(0,100%,50%);"></h5>
+
+                            <p class="card-text">Adresse : {{  event.adresse }} </p>
+                            <p class="card-text">Ville : {{  event.ville }} </p>
+                            <div class="text-primary" style="font-weight: bold;font-size: 2rem;">{{ event.prix | number_format(0, '', ' ') }} DT</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+{% endblock %}

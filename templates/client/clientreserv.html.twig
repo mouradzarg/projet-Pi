@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Les Reservations' %}
+
+
+{% block body %}
+    <div class="container mt-4">
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <table class="table table-striped">
+            <thead class="mt-5">
+            <tr>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for reservation in reservations %}
+                <tr  >
+                    <td class="card-text"style="font-weight: initial;">{{ reservation.nom }}</td>
+                    <td class="card-text"style="font-weight: initial;">{{ reservation.prenom }}</td>
+                    <td>
+
+                        <a href="{{ path('client.res.edit', {id: reservation.id}) }}" class="btn btn-secondary">Modifier</a>
+                        <form method="post" action="{{ path('client.res.delete', {id: reservation.id}) }}" style="display: inline-block" onsubmit="return confirm('Êtes vous vraiment sûr ?')">
+
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ reservation.id) }}">
+                            <button class="btn btn-danger">Supprimer</button>
+                        </form>
+                    </td>
+
+                </tr>
+
+
+            {% endfor %}
+            <a href="{{ path('client.res.new') }}" class="btn btn-primary ">Ajouter </a>
+            </tbody>
+
+        </table>
+
+
+    </div>
+
+
+{% endblock %}

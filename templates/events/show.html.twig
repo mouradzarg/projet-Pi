@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title event.titre %}
+
+{% block body %}
+
+    <div class="jumbotron">
+
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-md-8">
+                    {% if event.filename %}
+                        <img src="{{ vich_uploader_asset(event,'imageFile') | imagine_filter('thumb') }}" alt="card-img-top" style="width: 100%;height: auto">
+                    {%  endif %}
+                </div>
+                <div class="col-md-4">
+                    <h1>{{ event.titre }}</h1>
+                    <h2>Adresse : {{ event.adresse }} - {{ event.ville }} </h2>
+                    <div class="text-primary" style="font-size: 4rem;font-weight: bold;">{{ event.prix }} DT</div>
+                    <a href="{{ path('client.res.clientreserv') }}" class="btn btn-primary mt-4">Réserver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+
+
+
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Informations : </h2>
+                <table class="table table-striped">
+                    <tr>
+                        <td>Titre :</td>
+                        <td>{{ event.titre }} </td>
+                    </tr>
+                    <tr>
+                        <td>Description :</td>
+                        <td>{{ event.description }}</td>
+                    </tr>
+                    <tr>
+                        <td>Adresse :</td>
+                        <td>{{ event.adresse }}</td>
+                    </tr>
+                    <tr>
+                        <td>Ville :</td>
+                        <td>{{ event.ville }}</td>
+                    </tr>
+
+                    <td>Prix :</td>
+                    <td>{{ event.prix }}</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block title 'Consulter ' %}
+{% block body %}
+    <div class="jumbotron ">
+    <h1>Les Résérvations : </h1>
+    <div class="jumbotron text-center">
+    <div class="row flex ">
+        {% for reservation in reservations %}
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+
+                        </h5>
+                        <p class="card-text">Nom :{{ reservation.nom }} </p>
+                        <p class="card-text">Prenom :{{ reservation.nom }} </p>
+                        <p class="card-text">Nombre De Places :{{ reservation.nbrplace }} </p>
+                        <p class="card-text">{{ reservation.message }} </p>
+                        <div class="text-primary" style="font-weight: bold;font-size: 2rem;">{{ reservation.numtel | number_format(0, '', ' ') }} </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

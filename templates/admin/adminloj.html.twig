@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Gérer les Evénements' %}
+
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Gérer les biens</h1>
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for event in events %}
+                <tr>
+                    <td class="card-text"style="font-weight: initial;">{{ event.titre }}</td>
+                    <td>
+
+                        <a href="{{ path('admin.event.edit', {id: event.id}) }}" class="btn btn-secondary">Modifier</a>
+                        <form method="post" action="{{ path('admin.event.delete', {id: event.id}) }}" style="display: inline-block" onsubmit="return confirm('Êtes vous vraiment sûr ?')">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ event.id) }}">
+                            <button class="btn btn-danger">Supprimer</button>
+                        </form>
+                    </td>
+
+                </tr>
+            {% endfor %}
+            <a href="{{ path('admin.event.new') }}" class="btn btn-primary">Ajouter Un Evénement</a>
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+{% endblock %}
